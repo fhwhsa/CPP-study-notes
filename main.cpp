@@ -1,9 +1,10 @@
 #include "myComplex.h"
+#include "myString.h"
 
 void myComplex_test() 
 {
-    // 正负号测试
     cout << "myComplex测试：\n";
+    // 正负号测试
     myComplex testObj1(1, 1);
     cout << "初始值：" << testObj1 << "\n";
     cout << "取正值：" << +testObj1 << "\n";
@@ -46,7 +47,45 @@ void myComplex_test()
     cout << "共轭：" << testObj1.conj() << "\n\n";
 }
 
+void myString_test()
+{
+    cout << "myString测试：\n";
+    
+    myString* testObj1 = new myString("hello");
+    // 拷贝构造测试
+    myString testObj2(*testObj1);
+    cout << "删除的值：" << testObj2 << "\n";
+    delete testObj1;
+    cout << "删除后：" << testObj2 << "\n\n";
+    
+
+    // 赋值构造测试
+    testObj1 = new myString;
+    cout << "赋值前：" << *testObj1 << "\n";
+    *testObj1 = testObj2;
+    cout << "赋值后：" << *testObj1 << "\n\n";
+
+    // 长度和空测试
+    cout << "hello的长度和空测试：" << testObj1->length() << " " << testObj1->empty() << "\n\n";
+
+    // +测试
+    cout << "初始值：" << *testObj1 << " " << testObj2 << "\n";
+    cout << "相加1：" << *testObj1 + testObj2 << "\n";
+    cout << "相加2：" << *testObj1 + "world" << "\n\n";
+
+
+    // += 测试
+    cout << "初始值：" << *testObj1 << "\n";
+    *testObj1 += testObj2;
+    cout << "+=1：" << *testObj1 << "\n";
+    *testObj1 += "world";
+    cout << "+=2：" << *testObj1 << "\n\n";
+
+    delete testObj1;
+}
+
 int main() 
 {
     myComplex_test();
+    myString_test();
 }
