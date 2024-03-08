@@ -1,5 +1,6 @@
 #include "myComplex.h"
 #include "myString.h"
+#include "myFraction.h"
 
 void myComplex_test() 
 {
@@ -84,8 +85,20 @@ void myString_test()
     delete testObj1;
 }
 
+void myFraction_test()
+{
+    cout << "myFraction测试：\n";
+    myFraction testObj1(3, 5), testObj2(1, 10);
+    cout << "初始值：" << testObj1 << "\n";
+    cout << "分子：" << testObj1.getn() << "\n";
+    cout << "分母：" << testObj1.getd() << "\n";
+    cout << "加0.5：" << testObj1 + 0.5 << "\n";
+    cout << "加1/10：" << testObj1 + testObj2 << "\n\n";
+}
+
 int main() 
 {
-    myComplex_test();
-    myString_test();
+    // myComplex_test();
+    // myString_test();
+    myFraction_test();
 }
