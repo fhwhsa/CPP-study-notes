@@ -1,6 +1,7 @@
 #include "myComplex.h"
 #include "myString.h"
 #include "myFraction.h"
+#include "myPointer.h"
 
 void myComplex_test() 
 {
@@ -96,9 +97,18 @@ void myFraction_test()
     cout << "加1/10：" << testObj1 + testObj2 << "\n\n";
 }
 
+
+void myPointer_test()
+{
+    myPointer<tmp> p(new tmp());
+    p->method();
+    (*p).method();
+}
+
 int main() 
 {
     // myComplex_test();
     // myString_test();
-    myFraction_test();
+    // myFraction_test();
+    myPointer_test(); cout << "\n";
 }

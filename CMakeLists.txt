@@ -4,7 +4,8 @@ project(practice)
 
 include_directories(header)
 
-set(SRC_LIST source/myComplex.cpp source/myString.cpp source/myFraction.cpp)
+set(SRC_LIST source/myComplex.cpp source/myString.cpp source/myFraction.cpp
+source/myPointer.cpp)
 
 add_executable(main main.cpp ${SRC_LIST})
 
