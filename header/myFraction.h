@@ -6,21 +6,23 @@
 using std::ostream;
 using std::__gcd;
 
+template<typename T>
 class myFraction
 {
 public:
-    explicit myFraction(double n, double d = 1); // explicit 阻止不应该允许的经过转换构造函数进行的隐式转换的发生,声明为explicit的构造函数不能在隐式转换中使用。
-    double getn() const;
-    double getd() const;
-    operator double() const;
-    myFraction operator+ (const myFraction& c);
+    explicit myFraction(T n, T d = 1); // explicit 阻止不应该允许的经过转换构造函数进行的隐式转换的发生,声明为explicit的构造函数不能在隐式转换中使用。
+    T getn() const;
+    T getd() const;
+    operator T() const;
+    myFraction operator+ (const myFraction& c) const;
 
 private:
-    double numerator, denominator;
+    T numerator, denominator;
 
 };
 
-ostream& operator<< (ostream& os, const myFraction& c);
+template<typename T>
+ostream& operator<< (ostream& os, const myFraction<T>& c);
 
 
 #endif

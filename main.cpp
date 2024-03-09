@@ -89,7 +89,7 @@ void myString_test()
 void myFraction_test()
 {
     cout << "myFraction测试：\n";
-    myFraction testObj1(3, 5), testObj2(1, 10);
+    myFraction<float> testObj1(3, 5), testObj2(1, 10);
     cout << "初始值：" << testObj1 << "\n";
     cout << "分子：" << testObj1.getn() << "\n";
     cout << "分母：" << testObj1.getd() << "\n";
@@ -109,6 +109,6 @@ int main()
 {
     // myComplex_test();
     // myString_test();
-    // myFraction_test();
-    myPointer_test(); cout << "\n";
+    myFraction_test();
+    // myPointer_test(); cout << "\n";
 }
