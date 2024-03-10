@@ -2,6 +2,7 @@
 #include "myString.h"
 #include "myFraction.h"
 #include "myPointer.h"
+#include "myVTemplate.h"
 
 void myComplex_test() 
 {
@@ -109,6 +110,7 @@ int main()
 {
     // myComplex_test();
     // myString_test();
-    myFraction_test();
+    // myFraction_test();
     // myPointer_test(); cout << "\n";
+    print(12, "hello", 1.2);
 }
