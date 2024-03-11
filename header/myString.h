@@ -17,9 +17,18 @@ public:
     const char* c_str() const;
     myString& operator= (const myString& str);
 
+    /*
+        当成员函数的const和non-const版本同时存在时，
+        const对象会调用const版本，non-const只会调用non-const版本
+    */
+    char operator[] (size_t pos) const;
+    char& operator[] (size_t pos);
+
+
 private:
     char* str;
 
+    friend char& getReference(myString* ths, size_t pos);
     friend myString& __doapl(myString* ths, const myString& s);
 };
 

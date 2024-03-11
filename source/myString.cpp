@@ -40,6 +40,13 @@ const char* myString::c_str() const
     return str;
 }
 
+char& getReference(myString* ths, size_t pos)
+{
+    // if (pos >= ths->length()) 异常
+    
+    return ths->str[pos];
+}
+
 myString& __doapl(myString* ths, const myString& s)
 {
     // if (ths == *s) 
@@ -62,6 +69,17 @@ myString& myString::operator= (const myString& s)
     str = new char[strlen(s.c_str()) + 1];
     strcpy(str, s.c_str());
     return *this;
+}
+
+char myString::operator[] (size_t pos) const
+{
+    // if (pos >= this->length()) 异常
+    return str[pos];
+}
+
+char& myString::operator[] (size_t pos)
+{
+    return str[pos];
 }
 
 myString operator+ (const myString& a, const char* b)

@@ -85,6 +85,13 @@ void myString_test()
     cout << "+=2：" << *testObj1 << "\n\n";
 
     delete testObj1;
+
+    cout << "初始值：" << testObj2 << "\n";
+    testObj2[0] = toupper(testObj2[0]);
+    cout << "修改后：" << testObj2 << "\n";
+
+    const myString testObj3(testObj2);
+    // testObj3[0] = 'a'; 报错
 }
 
 void myFraction_test()
@@ -109,8 +116,8 @@ void myPointer_test()
 int main() 
 {
     // myComplex_test();
-    // myString_test();
+    myString_test();
     // myFraction_test();
     // myPointer_test(); cout << "\n";
-    print(12, "hello", 1.2);
+    // print(12, "hello", 1.2);
 }
